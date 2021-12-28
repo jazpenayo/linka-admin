@@ -8,19 +8,22 @@ export default class Source extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { estado: true };
-
+    this.state = { apikey: "" };
+    this.handleApiKeyChange = this.handleApiKeyChange.bind(this);
 
   }
 
-
+  handleApiKeyChange(apikey) {
+    this.setState({apikey});
+  } 
 
   render() {
+    const apikey = this.state.apikey;
     return (
       <div>
-       <EnviarApi />
+       <EnviarApi onApiKeyChange={this.handleApiKeyChange}/>
         <br /> <br />
-        {this.state.estado ? <SourceList /> : null}
+        <SourceList key={this.state.apikey} apikey={apikey} />
       </div>
 
     );
