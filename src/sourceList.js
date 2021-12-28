@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import EnviarApi from './enviarApi';
 
 
 export default class SourceList extends Component {
@@ -12,24 +11,21 @@ export default class SourceList extends Component {
         }
     }
 
-    state = {
-        sources: []
-    };
-    apiKey = {this.props.apiKey}
-
     componentDidMount() {
+        if (this.props.apikey===""){
+            this.setState({sources: []});
+            return;
+        }
         let url = "http://localhost:5000/api/v1/sources"
         fetch(url, {
             method: 'GET',
             headers: {
-                'X-API-Key': {props.apiKey},
+                'X-API-Key': this.props.apikey,
                 'Accept': 'application/json'
             }
         })
             .then(res => res.json())
             .then(res => this.setState({ sources: res }));
-
-
     }
 
     render() {
@@ -47,8 +43,4 @@ export default class SourceList extends Component {
 
         );
     }
-
-
-
 }
-
