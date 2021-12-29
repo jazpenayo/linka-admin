@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SourceList from './sourceList';
-import EnviarApi from './enviarApi';
+import SendApi from './sendApi';
 
 
 export default class Source extends Component {
@@ -21,7 +21,7 @@ export default class Source extends Component {
     const apikey = this.state.apikey;
     return (
       <div>
-       <EnviarApi onApiKeyChange={this.handleApiKeyChange}/>
+       <SendApi onApiKeyChange={this.handleApiKeyChange}/>
         <br /> <br />
         <SourceList key={this.state.apikey} apikey={apikey} />
       </div>
