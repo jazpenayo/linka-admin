@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-export default class EnviarApi extends Component {
+export default class SendApi extends Component {
 
   constructor(props) {
     super(props);
@@ -11,7 +11,7 @@ export default class EnviarApi extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {this.setState({apikey: event.target.value});  }
+  handleChange(event) {this.setState({apikey: event.target.value}); }
   handleSubmit(event) {
     this.props.onApiKeyChange(this.state.apikey);
     event.preventDefault();

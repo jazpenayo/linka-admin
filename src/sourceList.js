@@ -36,7 +36,6 @@ export default class SourceList extends Component {
                     {this.state.sources.map(function (item, index) {
                         return <li key={index}>{item.source}</li>
                     }
-
                     )}
                 </ul>
             </div>
