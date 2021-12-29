@@ -16,7 +16,7 @@ export default class SourceList extends Component {
             this.setState({sources: []});
             return;
         }
-        let url = "http://localhost:5000/api/v1/sources"
+        let url = `${process.env.REACT_APP_LINKA_URL}/api/v1/sources`;
         fetch(url, {
             method: 'GET',
             headers: {
