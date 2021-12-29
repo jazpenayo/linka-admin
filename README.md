@@ -14,5 +14,5 @@ $ npm install
 ## Run
 
 ```
-$ npm start
+$ REACT_APP_LINKA_URL="http://localhost:5000" npm start
 ```
