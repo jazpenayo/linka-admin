@@ -23,7 +23,7 @@ export default class SendApi extends Component {
         <h2>LINKA</h2>
         <br />
         APYKey:
-        <input id="api" nombre="api"  value={this.state.value} onChange={this.handleChange} />  <br />
+        <input id="api" nombre="api"  type="password" value={this.state.value} onChange={this.handleChange} />  <br />
         <button onClick={this.handleSubmit}>Enviar</button>
         <br /> <br />
       </div>
